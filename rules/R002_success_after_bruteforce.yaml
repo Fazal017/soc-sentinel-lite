@@ -1,0 +1,11 @@
+id: R002
+name: Successful Login After Brute Force
+description: Successful login from an IP that brute-forced within the previous 30 minutes.
+severity: critical
+threshold: 1
+window_minutes: 30
+enabled: true
+mitre:
+  tactic: Initial Access
+  technique: T1078
+  name: Valid Accounts

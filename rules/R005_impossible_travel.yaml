@@ -1,0 +1,11 @@
+id: R005
+name: Impossible Travel
+description: Same user logs in from two countries within 60 minutes.
+severity: high
+threshold: 2
+window_minutes: 60
+enabled: true
+mitre:
+  tactic: Initial Access
+  technique: T1078
+  name: Valid Accounts

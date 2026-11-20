@@ -1,0 +1,11 @@
+id: R003
+name: Direct Root Login
+description: Successful login as root over SSH. Root should never log in directly.
+severity: high
+threshold: 1
+window_minutes: 5
+enabled: true
+mitre:
+  tactic: Privilege Escalation
+  technique: T1078
+  name: Valid Accounts

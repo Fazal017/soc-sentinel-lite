@@ -1,0 +1,18 @@
+# Generated outputs — never commit analysis results
+alerts.db
+alerts.json
+report.html
+*.db
+*.log.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

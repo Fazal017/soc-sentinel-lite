@@ -1,0 +1,11 @@
+id: R006
+name: Sudo Privilege Escalation Attempts
+description: Three or more failed sudo attempts by one user within 10 minutes.
+severity: high
+threshold: 3
+window_minutes: 10
+enabled: true
+mitre:
+  tactic: Privilege Escalation
+  technique: T1548.003
+  name: Abuse Elevation Control Mechanism - Sudo and Sudo Caching

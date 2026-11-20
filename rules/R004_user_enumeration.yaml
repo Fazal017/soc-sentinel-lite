@@ -1,0 +1,11 @@
+id: R004
+name: SSH User Enumeration
+description: One IP probing eight or more distinct usernames within 10 minutes.
+severity: medium
+threshold: 8
+window_minutes: 10
+enabled: true
+mitre:
+  tactic: Reconnaissance
+  technique: T1595.001
+  name: Active Scanning - Scanning IP Blocks

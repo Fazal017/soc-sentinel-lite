@@ -1,0 +1,146 @@
+Nov 20 08:00:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48210 ssh2
+Nov 20 08:04:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48222 ssh2
+Nov 20 08:07:00 web01 sudo: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Nov 20 08:13:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48231 ssh2
+Nov 20 08:18:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 08:25:00 web01 sshd[2140]: Disconnected from user alice 203.0.113.10 port 48210 [preauth]
+Nov 20 08:34:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48300 ssh2
+Nov 20 08:45:00 web01 sshd[2140]: Failed password for alice from 203.0.113.10 port 48301 ssh2
+Nov 20 08:47:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48302 ssh2
+Nov 20 08:55:00 web01 sudo: alice : TTY=pts/1 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/apt update
+Nov 20 09:05:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48310 ssh2
+Nov 20 09:17:00 web01 CRON[301]: (deploy) CMD (cd /opt/app && ./healthcheck.sh)
+Nov 20 09:23:00 web01 sshd[2140]: Disconnected from user bob 203.0.113.10 port 48222 [preauth]
+Nov 20 09:32:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48344 ssh2
+Nov 20 09:46:00 web01 sshd[2140]: Accepted password for bob from 203.0.113.10 port 48351 ssh2
+Nov 20 09:50:00 web01 sudo: carol : TTY=pts/2 ; PWD=/home/carol ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+Nov 20 09:58:00 web01 sshd[2140]: Accepted publickey for alice from 203.0.113.10 port 48360 ssh2
+Nov 20 10:08:00 web01 CRON[301]: (root) CMD (/usr/sbin/logrotate /etc/logrotate.conf)
+Nov 20 10:15:00 web01 sshd[2140]: Disconnected from user carol 203.0.113.10 port 48344 [preauth]
+Nov 20 10:27:00 web01 sshd[2140]: Failed password for invalid user admin from 203.0.113.45 port 51001 ssh2
+Nov 20 10:28:00 web01 sshd[2140]: Failed password for invalid user root from 203.0.113.45 port 51002 ssh2
+Nov 20 10:29:00 web01 sshd[2140]: Failed password for invalid user test from 203.0.113.45 port 51003 ssh2
+Nov 20 10:30:00 web01 sshd[2140]: Failed password for invalid user oracle from 203.0.113.45 port 51004 ssh2
+Nov 20 10:31:00 web01 sshd[2140]: Failed password for invalid user postgres from 203.0.113.45 port 51005 ssh2
+Nov 20 10:32:00 web01 sshd[2140]: Failed password for invalid user deploy from 203.0.113.45 port 51006 ssh2
+Nov 20 10:33:00 web01 sshd[2140]: Accepted password for admin from 203.0.113.45 port 51007 ssh2
+Nov 20 10:36:00 web01 sshd[2140]: Disconnected from user admin 203.0.113.45 port 51007 [preauth]
+Nov 20 10:54:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48400 ssh2
+Nov 20 10:59:00 web01 sudo: alice : TTY=pts/1 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl reload nginx
+Nov 20 11:08:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48412 ssh2
+Nov 20 11:19:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 11:27:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48420 ssh2
+Nov 20 11:41:00 web01 sshd[2140]: Accepted password for root from 198.51.100.23 port 59901 ssh2
+Nov 20 11:43:00 web01 sshd[2140]: Disconnected from user root 198.51.100.23 port 59901 [preauth]
+Nov 20 11:49:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48440 ssh2
+Nov 20 11:56:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48451 ssh2
+Nov 20 12:00:00 web01 sudo: deploy : TTY=pts/0 ; PWD=/opt/app ; USER=root ; COMMAND=/usr/bin/systemctl restart app
+Nov 20 12:04:00 web01 sshd[2140]: Failed password for invalid user admin from 192.0.2.77 port 52000 ssh2
+Nov 20 12:05:00 web01 sshd[2140]: Failed password for invalid user root from 192.0.2.77 port 52001 ssh2
+Nov 20 12:06:00 web01 sshd[2140]: Failed password for invalid user user from 192.0.2.77 port 52002 ssh2
+Nov 20 12:07:00 web01 sshd[2140]: Failed password for invalid user test from 192.0.2.77 port 52003 ssh2
+Nov 20 12:08:00 web01 sshd[2140]: Failed password for invalid user guest from 192.0.2.77 port 52004 ssh2
+Nov 20 12:09:00 web01 sshd[2140]: Failed password for invalid user oracle from 192.0.2.77 port 52005 ssh2
+Nov 20 12:10:00 web01 sshd[2140]: Failed password for invalid user mysql from 192.0.2.77 port 52006 ssh2
+Nov 20 12:11:00 web01 sshd[2140]: Failed password for invalid user ftp from 192.0.2.77 port 52007 ssh2
+Nov 20 12:12:00 web01 sshd[2140]: Failed password for invalid user ubuntu from 192.0.2.77 port 52008 ssh2
+Nov 20 12:13:00 web01 sshd[2140]: Failed password for invalid user support from 192.0.2.77 port 52009 ssh2
+Nov 20 12:22:00 web01 sshd[2140]: Accepted password for bob from 203.0.113.10 port 48500 ssh2
+Nov 20 12:28:00 web01 sshd[2140]: Accepted publickey for carol from 203.0.113.10 port 48511 ssh2
+Nov 20 12:36:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 12:48:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48530 ssh2
+Nov 20 13:13:00 web01 sshd[2140]: Accepted password for alice from 198.51.100.10 port 61001 ssh2
+Nov 20 13:16:00 web01 sshd[2140]: Disconnected from user alice 198.51.100.10 port 61001 [preauth]
+Nov 20 13:27:00 web01 sshd[2140]: Accepted password for bob from 203.0.113.10 port 48560 ssh2
+Nov 20 13:32:00 web01 sudo: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -f /var/log/nginx/access.log
+Nov 20 13:41:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48571 ssh2
+Nov 20 13:51:00 web01 CRON[301]: (deploy) CMD (cd /opt/app && ./healthcheck.sh)
+Nov 20 14:04:00 web01 sudo: bob : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Nov 20 14:06:00 web01 sudo: bob : user NOT in sudoers ; TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Nov 20 14:09:00 web01 sudo: bob : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/vim /etc/passwd
+Nov 20 14:11:00 web01 sudo: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Nov 20 14:26:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48600 ssh2
+Nov 20 14:34:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48611 ssh2
+Nov 20 14:40:00 web01 sshd[2140]: Disconnected from user alice 203.0.113.10 port 48600 [preauth]
+Nov 20 14:49:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 14:56:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48630 ssh2
+Nov 20 15:01:00 web01 sshd[2140]: Disconnected from user carol 203.0.113.10 port 48630 [preauth]
+Nov 20 15:05:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48641 ssh2
+Nov 20 15:11:00 web01 sudo: deploy : TTY=pts/0 ; PWD=/opt/app ; USER=root ; COMMAND=/usr/bin/systemctl status app
+Nov 20 15:20:00 web01 sshd[2140]: Disconnected from user deploy 203.0.113.10 port 48641 [preauth]
+Nov 20 15:31:00 web01 CRON[301]: (root) CMD (/usr/sbin/logrotate /etc/logrotate.conf)
+Nov 20 15:39:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48655 ssh2
+Nov 20 15:49:00 web01 sshd[2140]: Disconnected from user bob 203.0.113.10 port 48611 [preauth]
+Nov 20 15:55:00 web01 sshd[2140]: Accepted password for bob from 203.0.113.10 port 48670 ssh2
+Nov 20 16:00:00 web01 sshd[2140]: Disconnected from user alice 203.0.113.10 port 48655 [preauth]
+Nov 20 16:07:00 web01 sshd[2140]: Accepted publickey for alice from 203.0.113.10 port 48681 ssh2
+Nov 20 16:13:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 16:22:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48692 ssh2
+Nov 20 16:30:00 web01 sshd[2140]: Disconnected from user carol 203.0.113.10 port 48692 [preauth]
+Nov 20 16:37:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48701 ssh2
+Nov 20 16:42:00 web01 sudo: alice : TTY=pts/1 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/journalctl -u app
+Nov 20 16:53:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48715 ssh2
+Nov 20 17:02:00 web01 CRON[301]: (deploy) CMD (cd /opt/app && ./healthcheck.sh)
+Nov 20 17:08:00 web01 sshd[2140]: Disconnected from user alice 203.0.113.10 port 48715 [preauth]
+Nov 20 17:16:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48730 ssh2
+Nov 20 17:23:00 web01 sshd[2140]: Disconnected from user deploy 203.0.113.10 port 48730 [preauth]
+Nov 20 15:46:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48800 ssh2
+Nov 20 15:50:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48801 ssh2
+Nov 20 15:51:00 web01 sshd[2140]: Disconnected from user bob 203.0.113.10 port 48801 [preauth]
+Nov 20 15:55:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48802 ssh2
+Nov 20 15:57:00 web01 sudo: carol : TTY=pts/0 ; PWD=/home/carol ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Nov 20 16:03:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48803 ssh2
+Nov 20 16:05:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 16:09:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48804 ssh2
+Nov 20 16:10:00 web01 sshd[2140]: Disconnected from user alice 203.0.113.10 port 48804 [preauth]
+Nov 20 16:14:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48805 ssh2
+Nov 20 16:20:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48806 ssh2
+Nov 20 16:24:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48807 ssh2
+Nov 20 16:26:00 web01 sudo: deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Nov 20 16:28:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 16:29:00 web01 sshd[2140]: Disconnected from user deploy 203.0.113.10 port 48807 [preauth]
+Nov 20 16:33:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48808 ssh2
+Nov 20 16:39:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48809 ssh2
+Nov 20 16:43:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48810 ssh2
+Nov 20 16:44:00 web01 sshd[2140]: Disconnected from user carol 203.0.113.10 port 48810 [preauth]
+Nov 20 16:48:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48811 ssh2
+Nov 20 16:50:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 16:56:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48812 ssh2
+Nov 20 16:58:00 web01 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Nov 20 17:02:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48813 ssh2
+Nov 20 17:03:00 web01 sshd[2140]: Disconnected from user bob 203.0.113.10 port 48813 [preauth]
+Nov 20 17:07:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48814 ssh2
+Nov 20 17:13:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48815 ssh2
+Nov 20 17:15:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 17:19:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48816 ssh2
+Nov 20 17:20:00 web01 sshd[2140]: Disconnected from user alice 203.0.113.10 port 48816 [preauth]
+Nov 20 17:24:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48817 ssh2
+Nov 20 17:26:00 web01 sudo: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Nov 20 17:32:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48818 ssh2
+Nov 20 17:36:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48819 ssh2
+Nov 20 17:38:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 17:39:00 web01 sshd[2140]: Disconnected from user deploy 203.0.113.10 port 48819 [preauth]
+Nov 20 17:43:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48820 ssh2
+Nov 20 17:49:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48821 ssh2
+Nov 20 17:53:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48822 ssh2
+Nov 20 17:55:00 web01 sudo: carol : TTY=pts/0 ; PWD=/home/carol ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Nov 20 17:56:00 web01 sshd[2140]: Disconnected from user carol 203.0.113.10 port 48822 [preauth]
+Nov 20 18:00:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48823 ssh2
+Nov 20 18:02:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 18:08:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48824 ssh2
+Nov 20 18:12:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48825 ssh2
+Nov 20 18:13:00 web01 sshd[2140]: Disconnected from user bob 203.0.113.10 port 48825 [preauth]
+Nov 20 18:17:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48826 ssh2
+Nov 20 18:23:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48827 ssh2
+Nov 20 18:25:00 web01 sudo: deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Nov 20 18:27:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 18:31:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48828 ssh2
+Nov 20 18:32:00 web01 sshd[2140]: Disconnected from user alice 203.0.113.10 port 48828 [preauth]
+Nov 20 18:36:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48829 ssh2
+Nov 20 18:42:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48830 ssh2
+Nov 20 18:46:00 web01 sshd[2140]: Accepted publickey for deploy from 203.0.113.10 port 48831 ssh2
+Nov 20 18:48:00 web01 CRON[301]: (root) CMD (/usr/local/bin/backup.sh)
+Nov 20 18:49:00 web01 sshd[2140]: Disconnected from user deploy 203.0.113.10 port 48831 [preauth]
+Nov 20 18:53:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48832 ssh2
+Nov 20 18:55:00 web01 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Nov 20 19:01:00 web01 sshd[2140]: Accepted publickey for bob from 203.0.113.10 port 48833 ssh2

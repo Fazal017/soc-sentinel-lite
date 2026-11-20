@@ -1,0 +1,11 @@
+id: R001
+name: SSH Brute Force
+description: Five or more failed SSH logins from one IP within 5 minutes.
+severity: high
+threshold: 5
+window_minutes: 5
+enabled: true
+mitre:
+  tactic: Credential Access
+  technique: T1110.001
+  name: Password Guessing
