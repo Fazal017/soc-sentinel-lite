@@ -2,6 +2,9 @@
 alerts.db
 alerts.json
 report.html
+report_v2.html
+incidents.json
+graph.json
 *.db
 *.log.bak
 

